@@ -1,0 +1,119 @@
+body{
+    background-image: url(img2.jpg);
+    background-size: cover;
+    
+  }
+  .center {
+    position: absolute;
+    top: 15%;
+    left: 33%;
+    transform: translate(-50% -50%);
+    width: 400px;
+    background: orangered white;
+    border-radius: 10px;
+    color: black;
+    padding-bottom: 20px;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    padding-right: 10px;
+    padding-left: 25px;
+    padding-bottom: 40px;
+    border: 10px solid black;
+    opacity: 30px;
+    margin-bottom: 100px;
+  }
+  
+  form .text-field {
+    position: absolute;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  
+  #h1 {
+    margin-top: 10px;
+    padding-top: 20px;
+    text-align: left;
+   
+    margin-left: 130px;
+  }
+  
+  input {
+    border-radius: 10px;
+    border: 3px solid black;
+    padding-left: 10px;
+    margin-left: 70px;
+    font-stretch: expanded;
+    text-align: center;
+  }
+  
+  #login {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    border-radius: 10px;
+    background-color: black;
+    font-size: larger;
+    margin-left: 110px;
+  }
+  
+  #login:hover {
+    background-color: orangered;
+    cursor: pointer;
+  }
+  
+  #username {
+    padding-left: 7px;
+  }
+  
+  .text-field.input {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  #username, #name, #number, #email {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: 50px;
+  }
+  
+  #password, #confirmpassword {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: 50px;
+  }
+  
+  .pass {
+    text-align: center;
+  }
+  
+  .signup-link {
+    text-align: center;
+  }
+  
+  #username-error {
+    color: red;
+  }
+  
+  #password-error {
+    color: red;
+  }
+  
+  #name-error {
+    color: red;
+  }
+  
+  #number-error {
+    color: red;
+  }
+  
+  #email-error {
+    color: red;
+  }
+  
+  #confirmpassword-error {
+    color: red;
+  }/*# sourceMappingURL=registerstyle.css.map */

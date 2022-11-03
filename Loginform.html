@@ -1,0 +1,87 @@
+<html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+ 
+    <link rel="stylesheet" href="./Loginform.css">
+</head>
+<body>
+    <div class="center">
+        <h1 id="h1">Login</h1><br><br>
+        <form action="C:\HTML1.html\image\welcome.html" onsubmit="return validated()">
+            <div class="txt-field">
+                <input type="text" placeholder="Username" id="username" onkeyup="validateusername()"><br>
+                <span id="username-error"></span>
+
+            </div><br><br>
+            <div class="txt-field">
+                <input type="password" placeholder="Password" id="password" onkeyup="validatepassword()"><br>
+                <span id="password-error"></span>
+
+            </div><br><br>
+            <button id="login" type="submit" onclick="useajax()">Login</button><br><br><br>
+            <div class="pass">Forgot password ?- <a href="#" style="color: white;"> Click-Here</a></div><br>
+            <div class="signup-link">
+                Not a member ?- <a
+                    href="C:\HTML1.html\image\Regform.html" style="color: white;">Register</a>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        // function useajax(){
+        //    var z=new XMLHttpRequest();
+        //    z.onreadystatechange=function(){
+        //        if(this.readyState==4 && this.status==200){
+        //            document.getElementById("login").innerHtml=this.responseText;
+        //        }
+        //    };
+        //    a.open("get","C:\HTML1.html\image\welcome.html",true );
+        //    a.send();
+        // }
+        var nameError = document.getElementById("username-error");
+        var passwordError = document.getElementById("password-error");
+
+
+        function validateusername() {
+            var username = document.getElementById("username").value;
+            if (username.length == '') {
+                nameError.innerHTML = 'Username is required.';
+                return false;
+            }
+            nameError.innerHTML = '';
+            return true;
+        }
+        function validatepassword() {
+            var password = document.getElementById("password").value;
+            if (password.length == '') {
+                passwordError.innerHTML = 'Enter your Password.';
+                return false;
+            }
+            if (password.length<8) {
+                passwordError.innerHTML = 'Password must contain atleast 8 character';
+                return false;
+            }
+            passwordError.innerHTML = '';
+            return true;
+        }
+
+        function validated(){
+            var password = document.getElementById("password").value;
+            var username = document.getElementById("username").value;
+
+            if(username.match("yogeshraja658")&&password.match("yogeshraja658")){
+                alert("You have successfully Loged In");
+                return true;
+            }else{
+                alert("Invalid User ID or Password");
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html></html>

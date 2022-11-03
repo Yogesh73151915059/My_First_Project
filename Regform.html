@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="registerstyle.css">
+</head>
+<body>
+    <div class="center">
+        <h1 id="h1">Register</h1><br><br>
+        <form  action="C:\HTML1.html\image\Loginform.html" onsubmit="return validated()">
+            <div class="txt-field">
+                <input type="text" placeholder="Name" id="name" onkeyup="validatename()"><br>
+                <span id="name-error" style="padding-left: 10%;" ></span><br>
+            </div>
+                <div class="txt-field">
+                <input type="text" placeholder="Username" id="username" onkeyup="validateusername()"><br>
+                <span id="username-error" style="padding-left: 10%;" ></span><br>
+            </div>
+            <div class="txt-field">
+                <input type="email" placeholder="E-mail Id" id="email" onkeyup="validateemail()"><br>
+                <span id="email-error" style="padding-left: 10%;" ></span><br>
+            </div>
+            <div class="txt-field">
+                <input type="tel" maxlength="10" placeholder="Mobile No" id="number" onkeyup="validatenumber()"><br>
+                <span id="number-error" style="padding-left: 10%;" ></span><br>    
+            </div>
+            <div class="txt-field">
+                <input type="password" placeholder="Password" id="password" onkeyup="validatepassword()"><br>
+                <span id="password-error" style="padding-left: 10%;" ></span><br>
+            </div>
+            <div class="txt-field">
+                <input type="password" placeholder=" Confirm Password" id="confirmpassword" onkeyup="validateconfirmpassword()"><br>
+                <span id="confirmpassword-error" style="padding-left: 10%;" ></span><br>
+            </div>
+            <div class="txt-field">
+                 <input type="radio" name="gender" id="gender">Male <input type="radio" name="gender" id="gender">Female <input type="radio" name="gender" id="gender">Others <br><br>
+            </div>
+            <div class="txt-field">
+                 <input type="date" id="dob"> Date of Birth
+                
+            </div><br><br>
+            <button id="login" type="submit" >Create</button><br><br><br>
+            <div class="pass">Already a User - <a href="C:\HTML1.html\image\Loginform.html"> Login</a></div><br>
+           
+        </form>
+    </div>
+    <script>
+        var nameError = document.getElementById("name-error");
+        var usernameError = document.getElementById("username-error");
+        var passwordError = document.getElementById("password-error");
+        var numberError = document.getElementById("number-error");
+        var emailError = document.getElementById("email-error");
+        var confirmpasswordError = document.getElementById("confirmpassword-error");
+
+
+
+        function validatename() {
+            var name = document.getElementById("name").value;
+            if(name.length == ''){
+                nameError.innerHTML = 'Name is required';
+                return false;
+            }
+           
+            nameError.innerHTML = '';
+            return true;
+        }
+
+        function validateusername() {
+            var username = document.getElementById("username").value;
+            if (username.length == '') {
+                usernameError.innerHTML = 'Username is required.';
+                return false;
+            }
+            nameError.innerHTML = '';
+            return true;
+        }
+        function validatepassword() {
+            var password = document.getElementById("password").value;
+            if (password.length == '') {
+                passwordError.innerHTML = 'Enter your Password.';
+                return false;
+            }
+            if (password.length<8) {
+                passwordError.innerHTML = 'Password must contain atleast 8 character';
+                return false;
+            }
+            if(password.match(/^(.{0,6}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/)){
+                passwordError.innerHTML = 'Use (@-A-1) in Password ';
+                return false;
+            }else{
+                passwordError.innerHTML = '';
+                return true;
+
+            }
+           
+        }
+        function validatenumber() {
+            var number = document.getElementById("number").value;
+            if (number.length == 0) {
+                numberError.innerHTML = 'Phone Number is required';
+                return false;
+            }
+            // if (password.length !==10) {
+            //     numberError.innerHTML = 'Phone number should be 10 digits';
+            //     return false;
+            // }
+            if(!number.match(/^[0-9]{10}$/)){
+                numberError.innerHTML='Phone number is required';
+                return false;
+            }
+            passwordError.innerHTML = '';
+            return true;
+        }
+        function validateemail() {
+            var email = document.getElementById("email").value;
+            if(email.length == ''){
+                emailError.innerHTML = 'Email is required';
+                return false;
+            }
+            if(!email.match(/^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$/)){
+                emailError.innerHTML = 'Email Invalid';
+                return false;
+            }
+            emailError.innerHTML = '';
+            return true;
+        }
+        
+        function validateconfirmpassword() {
+            var confirmpassword = document.getElementById("confirmpassword").value;
+            var password = document.getElementById("password").value;
+            if (confirmpassword.length == '') {
+                confirmpasswordError.innerHTML = 'Enter your confirmPassword.';
+                return false;
+            }
+            if (!confirmpassword.match(password)) {
+                confirmpasswordError.innerHTML = 'Password and ConfirmPassword Not Matched';
+                return false;
+            }
+            confirmpasswordError.innerHTML = '';
+            return true;
+        }
+
+
+        function validated(){
+            if(validatename() && validatepassword()){
+                 return true;
+            }else{
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>
